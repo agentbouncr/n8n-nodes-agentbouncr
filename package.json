@@ -1,0 +1,54 @@
+{
+  "name": "n8n-nodes-agentbouncr",
+  "version": "0.1.0",
+  "description": "n8n community node for AgentBouncr — AI Agent Governance Platform. Evaluate tool calls, manage agents, and receive governance events.",
+  "license": "MIT",
+  "author": {
+    "name": "AgentBouncr",
+    "url": "https://agentbouncr.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agentbouncr/n8n-nodes-agentbouncr.git"
+  },
+  "homepage": "https://agentbouncr.com",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "agentbouncr",
+    "ai-governance",
+    "agent-governance",
+    "kill-switch",
+    "audit-trail",
+    "ai-agents"
+  ],
+  "main": "dist/nodes/AgentBouncr/AgentBouncr.node.js",
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "nodes": [
+      "dist/nodes/AgentBouncr/AgentBouncr.node.js",
+      "dist/nodes/AgentBouncr/AgentBouncrTrigger.node.js"
+    ],
+    "credentials": [
+      "dist/credentials/AgentBouncrApi.credentials.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc && npm run copy-icons",
+    "copy-icons": "copyfiles -u 1 \"nodes/**/*.svg\" dist/",
+    "dev": "tsc --watch",
+    "lint": "eslint nodes credentials --ext .ts",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "n8n-workflow": "^2.10.0",
+    "typescript": "~5.7.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": ">=1.0.0"
+  }
+}
