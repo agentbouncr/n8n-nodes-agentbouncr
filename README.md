@@ -49,12 +49,13 @@ The main node for interacting with the AgentBouncr API.
 **Output:**
 ```json
 {
-  "decision": "allow",
+  "allowed": true,
+  "traceId": "abc-123",
   "reason": "Matched rule: allow-all"
 }
 ```
 
-Use an **IF** node after AgentBouncr to branch on `decision === "allow"`.
+Use an **IF** node after AgentBouncr to branch on `allowed equals true`.
 
 #### Resource: Agent
 
@@ -98,7 +99,7 @@ Webhook-based trigger that fires when governance events occur. When the workflow
 ### Pre-Tool-Check Pattern
 
 ```
-[Trigger] → [AgentBouncr: Evaluate] → [IF: decision = allow] → [Your Tool Node]
+[Trigger] → [AgentBouncr: Evaluate] → [IF: allowed = true] → [Your Tool Node]
                                        └─[Denied] → [Slack: Notify Team]
 ```
 
@@ -138,7 +139,7 @@ In v0.1.0, incoming webhook events from the AgentBouncr Trigger are **not crypto
 ## Links
 
 - [AgentBouncr Website](https://agentbouncr.com)
-- [AgentBouncr Dashboard](https://app.agentbouncr.com)
+- [AgentBouncr Dashboard](https://agentbouncr.com/dashboard)
 - [npm Package](https://www.npmjs.com/package/n8n-nodes-agentbouncr)
 - [GitHub Repository](https://github.com/agentbouncr/n8n-nodes-agentbouncr)
 

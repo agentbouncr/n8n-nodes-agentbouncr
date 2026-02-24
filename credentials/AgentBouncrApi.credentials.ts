@@ -26,7 +26,7 @@ export class AgentBouncrApi implements ICredentialType {
 			displayName: 'API URL',
 			name: 'baseUrl',
 			type: 'string',
-			default: 'https://api.agentbouncr.com',
+			default: 'https://agentbouncr.com',
 			description:
 				'The base URL of your AgentBouncr API. Only change this for self-hosted instances.',
 		},
