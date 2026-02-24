@@ -117,7 +117,7 @@ export class AgentBouncr implements INodeType {
 				displayName: 'Parameters (JSON)',
 				name: 'params',
 				type: 'json',
-				default: '',
+				default: '{}',
 				displayOptions: { show: { resource: ['evaluate'] } },
 				placeholder: '{"to": "user@example.com", "subject": "Hello"}',
 				description: 'Optional JSON object with the tool call parameters. These are logged in the audit trail.',
@@ -125,6 +125,7 @@ export class AgentBouncr implements INodeType {
 					send: {
 						type: 'body',
 						property: 'params',
+						value: '={{ $value ? (typeof $value === "string" ? JSON.parse($value) : $value) : {} }}',
 					},
 				},
 			},
