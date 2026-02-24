@@ -124,6 +124,12 @@ This is the "Stripe model" — your first API call is the registration moment.
 
 In v0.1.0, incoming webhook events from the AgentBouncr Trigger are **not cryptographically verified** (no HMAC signature check). HMAC verification will be added in v0.2.0. The webhook URL itself provides basic security as it is unique and not guessable.
 
+## Roadmap (v0.2.0)
+
+- HMAC webhook signature verification on incoming trigger events
+- Custom error messages (401, 403, 429 mapped to user-friendly hints)
+- Approval operations (List, Approve, Reject)
+
 ## Compatibility
 
 - **n8n:** v1.0.0 and later
