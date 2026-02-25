@@ -35,7 +35,7 @@
   },
   "scripts": {
     "build": "tsc && npm run copy-icons",
-    "copy-icons": "copyfiles -u 1 \"nodes/**/*.svg\" dist/",
+    "copy-icons": "copyfiles -u 0 \"nodes/**/*.svg\" dist/",
     "dev": "tsc --watch",
     "lint": "eslint nodes credentials --ext .ts",
     "prepublishOnly": "npm run build"
@@ -50,5 +50,8 @@
   },
   "peerDependencies": {
     "n8n-workflow": ">=1.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }

@@ -21,6 +21,22 @@ npm install n8n-nodes-agentbouncr
 
 Restart n8n after installation.
 
+### n8n v2 Task Runner Compatibility
+
+n8n v2 uses an external Task Runner that does **not** load community nodes by default. If you see "Unrecognized node type" errors after installation, set:
+
+```
+N8N_RUNNERS_DISABLED=true
+```
+
+This forces n8n to run workflows in-process where community nodes are loaded. This affects all community nodes, not just this one.
+
+**Docker:** Add to your docker-compose.yml:
+```yaml
+environment:
+  - N8N_RUNNERS_DISABLED=true
+```
+
 ## Authentication
 
 1. Sign up at [agentbouncr.com](https://agentbouncr.com)
