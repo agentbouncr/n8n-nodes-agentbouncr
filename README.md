@@ -1,5 +1,20 @@
 # n8n-nodes-agentbouncr
 
+> ## ⏸️ This project is paused
+>
+> AgentBouncr has been wound down and the hosted service at `agentbouncr.com` is
+> shut down. **This node has nothing left to connect to** — every operation it
+> offers talks to that API.
+>
+> The package stays on npm so existing installs do not break, but it is
+> **unmaintained**: no releases, no fixes, no support. Issues and pull requests will
+> not be answered.
+>
+> If you have this node installed in a workflow, it will fail on execution. Removing
+> it is the right move.
+>
+> See [agentbouncr.com](https://agentbouncr.com) for the full status.
+
 [n8n](https://n8n.io/) community node for [AgentBouncr](https://agentbouncr.com) — the AI Agent Governance Platform.
 
 Evaluate tool calls against governance policies, manage AI agents, control the kill-switch, and receive real-time governance events — all from your n8n workflows.
